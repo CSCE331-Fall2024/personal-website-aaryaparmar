@@ -144,8 +144,13 @@ p { /* creates space btwn paragraphs */
     width: 30px;
     height: 30px;
     vertical-align: middle; 
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.footer-icon:hover { /* this style creates the enlarging and glowing effect in footer */
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px rgba(252, 117, 243, 0.8); 
+}
 .about-container { /*  creates boxes for pic and text to be side to side */
     display: flex; 
     align-items: center; 
