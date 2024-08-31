@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Tenor Sans', 'Poppins' , sans-serif;
+    font-family: 'Tenor Sans','Poppins' , sans-serif;
     box-sizing: border-box;
 
 }
@@ -66,4 +66,55 @@ h1 {
 h2 {
     margin-top: 10px; /* Adjust this value to control the spacing between the h1 and h2 */
     font-size: 1.5em;
+}
+p {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the container takes the full viewport height */
+    background-color: #ffccff; /* Optional background color */
+}
+
+/* PDF container with specific dimensions */
+.pdf-container {
+    width: 80%; /* Adjust the width as needed */
+    height: 90vh; /* Adjust the height as needed */
+    background-color: #fff; /* Optional background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Styling the embed element */
+.pdf-container embed {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove border */
+}
+
+/* Style the background of the h1 or container */
+.name-background {
+    position: relative; /* Establishes a positioning context */
+    background-image: url('images/backgroundimg.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    min-height: 500px; /* Minimum height to fit the background and text */
+    color: #fff; /* Text color for contrast */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    border-radius: 10px; /* Optional: Rounds the corners */
+    text-align: center; /* Centers text */
+    padding: 20px; /* Adds space around the text */
+}
+
+.name-background h1,
+.name-background h2 {
+    position: relative; /* Keeps the text on top */
+    z-index: 1; /* Ensures the text is above the background image */
+    margin: 0; /* Removes default margin for better spacing control */
 }
