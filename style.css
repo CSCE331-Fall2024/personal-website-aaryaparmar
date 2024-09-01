@@ -94,7 +94,7 @@ p { /* creates space btwn paragraphs */
 }
 
 /* creating the pdf box */
-.pdf-container embed {
+.pdf-container iframe {
     width: 100%;
     height: 100%;
     border: none; 
