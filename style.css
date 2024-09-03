@@ -12,11 +12,12 @@ body{
 }
 #header{
     width: 100%;
-    height: auto;
+    height: 100px;
     background-color: #080808;
+    padding: 0; 
 }
 .container{
-    padding: 10px 10%;
+    padding: 0px 10%;
 }
 nav{
     display: flex;
@@ -24,8 +25,14 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.logo{
-    width: 140px;
+.logo {
+    background-image: url('images/AP.png');
+    width: 120px;
+    height: 120px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 /* the navs are to create that pink line under the top nav buttons */
 nav ul li{
@@ -227,3 +234,37 @@ p { /* creates space btwn paragraphs */
 #centered-text {
     text-align: center; /* centers text on the AI Generated page*/
 }
+
+
+
+
+.theme-toggle-container {
+    position: absolute; /* Allows for precise positioning */
+    bottom: 20px; /* Position it 20px from the bottom of the container */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Full width of the container */
+}
+
+
+.theme-toggle-container button {
+    border-radius: 12px; /* Rounded edges */
+    padding: 10px 20px; /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333; /* Dark background for light mode button */
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-container .toggle-light {
+    background-color: #f5f5dc;
+    color: #274E13;
+}
+
+.theme-toggle-container .toggle-dark {
+    background-color: #000000; /* Dark background for light mode button */
+    color: #e6a9cf;
+}
+

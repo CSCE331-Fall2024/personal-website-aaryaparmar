@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qualifications - Aarya Parmar</title>
     <link rel="stylesheet" href="style.css">
+    <link id="light-view" rel="stylesheet" href="style2.css"  disabled>
 </head>
 <body>
+    
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/AP.png" class="logo">
+                <div class="logo"></div>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
@@ -56,6 +58,24 @@
                 <iframe src="https://drive.google.com/file/d/1mnqwA_6oLvmONEub3ei8BC2Gm-JIFtyt/preview" width="600" height="400"></iframe>
             </div>
         </div>
+        <script>
+            // Function to set the theme
+            function setTheme(theme) {
+                if (theme === 'light') {
+                    document.getElementById('light-view').disabled = false;
+                    document.getElementById('dark-view').disabled = true;
+                } else {
+                    document.getElementById('light-view').disabled = true;
+                    document.getElementById('dark-view').disabled = false;
+                }
+            }
+    
+            // Check for saved theme on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                setTheme(savedTheme);
+            });
+        </script>
 </body>
 <footer class="footer">
     <div class="container">

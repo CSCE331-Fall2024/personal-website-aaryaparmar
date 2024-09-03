@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarya Parmar</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="dark-view" rel="stylesheet" href="style.css" >
+    <link id="light-view" rel="stylesheet" href="style2.css"  disabled>
 </head>
 <body>
+    
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/AP.png" class="logo">
+            <div class="logo"></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -28,8 +30,55 @@
 </h1>
 <h2> Welcome to my Personal Website</h2>
 <h3> Please navigate around my website using the above tabs to learn more about me! </h3>
+<div class="theme-toggle-container">
+    <button id="toggle-light" class="toggle-dark" style="display:none;">Switch to Dark Mode</button>
+    <button id="toggle-dark" class="toggle-light">Switch to Light Mode</button>
 </div>
+</div>
+</div>
+<script>
+function setTheme(theme) {
+    const lightView = document.getElementById('light-view');
+    const darkView = document.getElementById('dark-view');
+    if (lightView && darkView) {
+        if (theme === 'light') {
+            lightView.disabled = false;
+            darkView.disabled = true;
+            document.getElementById('toggle-light').style.display = 'block';
+            document.getElementById('toggle-dark').style.display = 'none';
+        } else {
+            lightView.disabled = true;
+            darkView.disabled = false;
+            document.getElementById('toggle-light').style.display = 'none';
+            document.getElementById('toggle-dark').style.display = 'block';
+        }
+    }
+}
 
+// Check for saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    // Add event listeners for theme toggle buttons only if they exist
+    const toggleLightButton = document.getElementById('toggle-light');
+    const toggleDarkButton = document.getElementById('toggle-dark');
+    
+    if (toggleLightButton) {
+        toggleLightButton.addEventListener('click', function() {
+            setTheme('dark');
+            localStorage.setItem('theme', 'dark'); // Save the theme to localStorage
+        });
+    }
+
+    if (toggleDarkButton) {
+        toggleDarkButton.addEventListener('click', function() {
+            setTheme('light');
+            localStorage.setItem('theme', 'light'); // Save the theme to localStorage
+        });
+    }
+});
+</script>
 </body>
 <footer class="footer">
     <div class="container">
@@ -44,4 +93,5 @@
         </a>
     </div>
 </footer>
+
 </html>
