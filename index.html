@@ -37,49 +37,6 @@
 </div>
 </div>
 </div>
-<script>
-function setTheme(theme) {
-    const lightView = document.getElementById('light-view');
-    const darkView = document.getElementById('dark-view');
-    if (lightView && darkView) {
-        if (theme === 'light') {
-            lightView.disabled = false;
-            darkView.disabled = true;
-            document.getElementById('toggle-light').style.display = 'block';
-            document.getElementById('toggle-dark').style.display = 'none';
-        } else {
-            lightView.disabled = true;
-            darkView.disabled = false;
-            document.getElementById('toggle-light').style.display = 'none';
-            document.getElementById('toggle-dark').style.display = 'block';
-        }
-    }
-}
-
-// Check for saved theme on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    // Add event listeners for theme toggle buttons only if they exist
-    const toggleLightButton = document.getElementById('toggle-light');
-    const toggleDarkButton = document.getElementById('toggle-dark');
-    
-    if (toggleLightButton) {
-        toggleLightButton.addEventListener('click', function() {
-            setTheme('dark');
-            localStorage.setItem('theme', 'dark'); // Save the theme to localStorage
-        });
-    }
-
-    if (toggleDarkButton) {
-        toggleDarkButton.addEventListener('click', function() {
-            setTheme('light');
-            localStorage.setItem('theme', 'light'); // Save the theme to localStorage
-        });
-    }
-});
-</script>
 </body>
 <footer class="footer">
     <div class="container">
@@ -94,5 +51,51 @@ document.addEventListener('DOMContentLoaded', function() {
         </a>
     </div>
 </footer>
-
+<div class="theme-toggle-container"></div>
+    <button id="toggle-light" class="toggle-dark" style="display:none;">Switch to Dark Mode</button>
+    <button id="toggle-dark" class="toggle-light">Switch to Light Mode</button>
+</div>
+<script>
+    function setTheme(theme) {
+        const lightView = document.getElementById('light-view');
+        const darkView = document.getElementById('dark-view');
+        if (lightView && darkView) {
+            if (theme === 'light') {
+                lightView.disabled = false;
+                darkView.disabled = true;
+                document.getElementById('toggle-light').style.display = 'block';
+                document.getElementById('toggle-dark').style.display = 'none';
+            } else {
+                lightView.disabled = true;
+                darkView.disabled = false;
+                document.getElementById('toggle-light').style.display = 'none';
+                document.getElementById('toggle-dark').style.display = 'block';
+            }
+        }
+    }
+    
+    // Check for saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+    
+        // Add event listeners for theme toggle buttons only if they exist
+        const toggleLightButton = document.getElementById('toggle-light');
+        const toggleDarkButton = document.getElementById('toggle-dark');
+        
+        if (toggleLightButton) {
+            toggleLightButton.addEventListener('click', function() {
+                setTheme('dark');
+                localStorage.setItem('theme', 'dark'); // Save the theme to localStorage
+            });
+        }
+    
+        if (toggleDarkButton) {
+            toggleDarkButton.addEventListener('click', function() {
+                setTheme('light');
+                localStorage.setItem('theme', 'light'); // Save the theme to localStorage
+            });
+        }
+    });
+    </script>
 </html>
