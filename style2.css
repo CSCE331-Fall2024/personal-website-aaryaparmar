@@ -90,23 +90,30 @@ h3 { /* reates space btwn h2 and h3*/
 
 
 p { /* creates space btwn paragraphs */
-    margin-bottom: 20px; 
-}
-/* pdf box dimensions */
-.fullscreen-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #274E13;
+    margin-bottom: 20px;
+    margin-left: 10px; 
 }
 
 /* pdf box dimensions */
+.qualifications-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+    gap: 20px; /* Space between the text and the PDF */
+}
+
+.text-container {
+    flex: 1;
+    margin-right: 20px; /* Space between text and PDF */
+    margin-left: 10px;
+}
+
 .pdf-container {
-    width: 80%; 
-    height: 90vh; 
-    background-color: #fff; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 45%; /* Adjust the width as needed */
+    height: 600px; /* Match this to the iframe height */
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(39, 78, 19, 0.8); 
 }
 
 /* creating the pdf box */
@@ -114,6 +121,7 @@ p { /* creates space btwn paragraphs */
     width: 100%;
     height: 100%;
     border: none; 
+    
 }
 
 /* style to create the background of the landing page with that pic */
